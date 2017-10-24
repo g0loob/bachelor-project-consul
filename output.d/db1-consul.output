@@ -1,0 +1,70 @@
+==> Starting Consul agent...
+==> Consul agent running!
+           Version: 'v0.9.3'
+           Node ID: 'eaa8e643-8545-ff20-0438-bcbd7ef2258e'
+         Node name: 'db1-node'
+        Datacenter: 'dc1' (Segment: '<all>')
+            Server: true (Bootstrap: false)
+       Client Addr: 127.0.0.1 (HTTP: 8500, HTTPS: -1, DNS: 8600)
+      Cluster Addr: 172.28.128.4 (LAN: 8301, WAN: 8302)
+           Encrypt: Gossip: false, TLS-Outgoing: false, TLS-Incoming: false
+
+==> Log data will now stream in as it occurs:
+
+    2017/10/16 16:59:59 [INFO] raft: Initial configuration (index=1169): [{Suffrage:Voter ID:172.28.128.6:8300 Address:172.28.128.6:8300} {Suffrage:Voter ID:172.28.128.5:8300 Address:172.28.128.5:8300} {Suffrage:Voter ID:172.28.128.3:8300 Address:172.28.128.3:8300} {Suffrage:Voter ID:172.28.128.4:8300 Address:172.28.128.4:8300}]
+    2017/10/16 16:59:59 [INFO] raft: Node at 172.28.128.4:8300 [Follower] entering Follower state (Leader: "")
+    2017/10/16 16:59:59 [INFO] serf: EventMemberJoin: db1-node.dc1 172.28.128.4
+    2017/10/16 16:59:59 [INFO] serf: EventMemberJoin: db1-node 172.28.128.4
+    2017/10/16 16:59:59 [INFO] serf: Attempting re-join to previously known node: web2-node: 172.28.128.6:8301
+    2017/10/16 16:59:59 [INFO] consul: Adding LAN server db1-node (Addr: tcp/172.28.128.4:8300) (DC: dc1)
+    2017/10/16 16:59:59 [INFO] consul: Handled member-join event for server "db1-node.dc1" in area "wan"
+    2017/10/16 17:00:00 [INFO] agent: Started DNS server 127.0.0.1:8600 (udp)
+    2017/10/16 17:00:00 [INFO] serf: EventMemberJoin: web2-node 172.28.128.6
+    2017/10/16 17:00:00 [INFO] serf: EventMemberJoin: db2-node 172.28.128.5
+    2017/10/16 17:00:00 [INFO] serf: EventMemberJoin: web1-node 172.28.128.3
+    2017/10/16 17:00:00 [INFO] serf: Re-joined to previously known node: web2-node: 172.28.128.6:8301
+    2017/10/16 17:00:00 [INFO] consul: Adding LAN server web2-node (Addr: tcp/172.28.128.6:8300) (DC: dc1)
+    2017/10/16 17:00:00 [INFO] consul: Adding LAN server db2-node (Addr: tcp/172.28.128.5:8300) (DC: dc1)
+    2017/10/16 17:00:00 [INFO] consul: Adding LAN server web1-node (Addr: tcp/172.28.128.3:8300) (DC: dc1)
+    2017/10/16 17:00:00 [INFO] consul: New leader elected: web2-node
+    2017/10/16 17:00:00 [INFO] agent: Started DNS server 127.0.0.1:8600 (tcp)
+    2017/10/16 17:00:00 [INFO] agent: Started HTTP server on 127.0.0.1:8500
+    2017/10/16 17:00:00 [INFO] agent: Retry join LAN is supported for: aws azure gce softlayer
+    2017/10/16 17:00:00 [INFO] agent: Joining LAN cluster...
+    2017/10/16 17:00:00 [INFO] agent: (LAN) joining: [172.28.128.3 172.28.128.5]
+    2017/10/16 17:00:00 [INFO] serf: EventMemberJoin: db2-node.dc1 172.28.128.5
+    2017/10/16 17:00:00 [INFO] serf: EventMemberJoin: web1-node.dc1 172.28.128.3
+    2017/10/16 17:00:00 [INFO] serf: EventMemberJoin: web2-node.dc1 172.28.128.6
+    2017/10/16 17:00:00 [INFO] consul: Handled member-join event for server "db2-node.dc1" in area "wan"
+    2017/10/16 17:00:00 [INFO] consul: Handled member-join event for server "web1-node.dc1" in area "wan"
+    2017/10/16 17:00:00 [INFO] consul: Handled member-join event for server "web2-node.dc1" in area "wan"
+2017/10/16 17:00:00 [DEBUG] raft-net: 172.28.128.4:8300 accepted connection from: 172.28.128.6:40115
+    2017/10/16 17:00:00 [WARN] raft: Failed to get previous log: 2299 log not found (last: 2288)
+    2017/10/16 17:00:00 [INFO] agent: (LAN) joined: 2 Err: <nil>
+    2017/10/16 17:00:00 [INFO] agent: Join LAN completed. Synced with 2 initial agents
+    2017/10/16 17:00:00 [INFO] agent: Synced service 'mongodb'
+2017/10/16 17:00:01 [DEBUG] raft-net: 172.28.128.4:8300 accepted connection from: 172.28.128.6:56616
+==> Newer Consul version available: 1.0.0 (currently running: 0.9.3)
+    2017/10/16 17:56:47 [INFO] Caught signal:  hangup
+    2017/10/16 17:56:47 [INFO] Reloading configuration...
+    2017/10/16 17:56:47 [INFO] Caught signal:  terminated
+    2017/10/16 17:56:47 [INFO] Gracefully shutting down agent...
+    2017/10/16 17:56:47 [INFO] consul: server starting leave
+    2017/10/16 17:56:47 [INFO] agent: Synced service 'mongodb'
+    2017/10/16 17:56:48 [INFO] serf: EventMemberLeave: db1-node.dc1 172.28.128.4
+    2017/10/16 17:56:48 [INFO] consul: Handled member-leave event for server "db1-node.dc1" in area "wan"
+    2017/10/16 17:56:49 [INFO] serf: EventMemberLeave: db1-node 172.28.128.4
+    2017/10/16 17:56:49 [INFO] consul: Removing LAN server db1-node (Addr: tcp/172.28.128.4:8300) (DC: dc1)
+2017/10/16 17:56:49 [ERR] raft-net: Failed to flush response: write tcp 172.28.128.4:8300->172.28.128.6:40115: write: broken pipe
+    2017/10/16 17:56:49 [INFO] Caught second signal terminated. Exiting
+    2017/10/16 17:56:49 [INFO] agent: Requesting shutdown
+    2017/10/16 17:56:49 [INFO] consul: shutting down server
+    2017/10/16 17:56:49 [INFO] manager: shutting down
+    2017/10/16 17:56:49 [INFO] agent: consul server down
+    2017/10/16 17:56:49 [INFO] agent: shutdown complete
+    2017/10/16 17:56:49 [INFO] agent: Stopping DNS server 127.0.0.1:8600 (tcp)
+    2017/10/16 17:56:49 [INFO] agent: Stopping DNS server 127.0.0.1:8600 (udp)
+    2017/10/16 17:56:49 [INFO] agent: Stopping HTTP server 127.0.0.1:8500
+    2017/10/16 17:56:49 [INFO] agent: Waiting for endpoints to shut down
+    2017/10/16 17:56:49 [INFO] agent: Endpoints down
+    2017/10/16 17:56:49 [INFO] Exit code:  1

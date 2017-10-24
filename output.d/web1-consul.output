@@ -1,0 +1,147 @@
+==> WARNING: Bootstrap mode enabled! Do not enable unless necessary
+==> Starting Consul agent...
+==> Consul agent running!
+           Version: 'v0.9.3'
+           Node ID: '5f993caa-cc4f-25bd-3de8-14a46db52113'
+         Node name: 'web1-node'
+        Datacenter: 'dc1' (Segment: '<all>')
+            Server: true (Bootstrap: true)
+       Client Addr: 0.0.0.0 (HTTP: 8500, HTTPS: -1, DNS: 8600)
+      Cluster Addr: 172.28.128.3 (LAN: 8301, WAN: 8302)
+           Encrypt: Gossip: false, TLS-Outgoing: false, TLS-Incoming: false
+
+==> Log data will now stream in as it occurs:
+
+    2017/10/16 16:57:33 [INFO] raft: Initial configuration (index=1169): [{Suffrage:Voter ID:172.28.128.6:8300 Address:172.28.128.6:8300} {Suffrage:Voter ID:172.28.128.5:8300 Address:172.28.128.5:8300} {Suffrage:Voter ID:172.28.128.3:8300 Address:172.28.128.3:8300} {Suffrage:Voter ID:172.28.128.4:8300 Address:172.28.128.4:8300}]
+    2017/10/16 16:57:33 [INFO] raft: Node at 172.28.128.3:8300 [Follower] entering Follower state (Leader: "")
+    2017/10/16 16:57:34 [INFO] serf: EventMemberJoin: web1-node.dc1 172.28.128.3
+    2017/10/16 16:57:34 [INFO] serf: EventMemberJoin: web1-node 172.28.128.3
+    2017/10/16 16:57:34 [INFO] serf: Attempting re-join to previously known node: db2-node: 172.28.128.5:8301
+    2017/10/16 16:57:34 [INFO] consul: Adding LAN server web1-node (Addr: tcp/172.28.128.3:8300) (DC: dc1)
+    2017/10/16 16:57:34 [INFO] consul: Handled member-join event for server "web1-node.dc1" in area "wan"
+    2017/10/16 16:57:34 [INFO] agent: Started DNS server 0.0.0.0:8600 (udp)
+    2017/10/16 16:57:34 [INFO] agent: Started DNS server 0.0.0.0:8600 (tcp)
+    2017/10/16 16:57:34 [INFO] agent: Started HTTP server on [::]:8500
+    2017/10/16 16:57:34 [INFO] agent: Retry join LAN is supported for: aws azure gce softlayer
+    2017/10/16 16:57:34 [INFO] agent: Joining LAN cluster...
+    2017/10/16 16:57:34 [INFO] agent: (LAN) joining: [172.28.128.6 172.28.128.4]
+    2017/10/16 16:57:37 [WARN] serf: Failed to re-join any previously known node
+    2017/10/16 16:57:37 [INFO] agent: (LAN) joined: 0 Err: 2 error(s) occurred:
+
+* Failed to join 172.28.128.6: dial tcp 172.28.128.6:8301: getsockopt: no route to host
+* Failed to join 172.28.128.4: dial tcp 172.28.128.4:8301: getsockopt: no route to host
+    2017/10/16 16:57:37 [WARN] agent: Join LAN failed: <nil>, retrying in 30s
+==> Newer Consul version available: 1.0.0 (currently running: 0.9.3)
+    2017/10/16 16:57:41 [ERR] agent: failed to sync remote state: No cluster leader
+    2017/10/16 16:57:43 [WARN] raft: Heartbeat timeout from "" reached, starting election
+    2017/10/16 16:57:43 [INFO] raft: Node at 172.28.128.3:8300 [Candidate] entering Candidate state in term 91
+    2017/10/16 16:57:46 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.5:8300 172.28.128.5:8300}: dial tcp 172.28.128.3:0->172.28.128.5:8300: getsockopt: no route to host
+    2017/10/16 16:57:46 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.4:8300 172.28.128.4:8300}: dial tcp 172.28.128.3:0->172.28.128.4:8300: getsockopt: no route to host
+    2017/10/16 16:57:46 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.6:8300 172.28.128.6:8300}: dial tcp 172.28.128.3:0->172.28.128.6:8300: getsockopt: no route to host
+    2017/10/16 16:57:49 [WARN] raft: Election timeout reached, restarting election
+    2017/10/16 16:57:49 [INFO] raft: Node at 172.28.128.3:8300 [Candidate] entering Candidate state in term 92
+    2017/10/16 16:57:52 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.5:8300 172.28.128.5:8300}: dial tcp 172.28.128.3:0->172.28.128.5:8300: getsockopt: no route to host
+    2017/10/16 16:57:52 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.6:8300 172.28.128.6:8300}: dial tcp 172.28.128.3:0->172.28.128.6:8300: getsockopt: no route to host
+    2017/10/16 16:57:52 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.4:8300 172.28.128.4:8300}: dial tcp 172.28.128.3:0->172.28.128.4:8300: getsockopt: no route to host
+    2017/10/16 16:57:56 [ERR] agent: Coordinate update error: No cluster leader
+    2017/10/16 16:57:59 [WARN] raft: Election timeout reached, restarting election
+    2017/10/16 16:57:59 [INFO] raft: Node at 172.28.128.3:8300 [Candidate] entering Candidate state in term 93
+    2017/10/16 16:57:59 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.6:8300 172.28.128.6:8300}: dial tcp 172.28.128.3:0->172.28.128.6:8300: getsockopt: connection refused
+    2017/10/16 16:58:01 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.5:8300 172.28.128.5:8300}: dial tcp 172.28.128.3:0->172.28.128.5:8300: getsockopt: no route to host
+    2017/10/16 16:58:01 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.4:8300 172.28.128.4:8300}: dial tcp 172.28.128.3:0->172.28.128.4:8300: getsockopt: no route to host
+    2017/10/16 16:58:06 [WARN] raft: Election timeout reached, restarting election
+    2017/10/16 16:58:06 [INFO] raft: Node at 172.28.128.3:8300 [Candidate] entering Candidate state in term 94
+    2017/10/16 16:58:06 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.6:8300 172.28.128.6:8300}: dial tcp 172.28.128.3:0->172.28.128.6:8300: getsockopt: connection refused
+    2017/10/16 16:58:07 [INFO] agent: (LAN) joining: [172.28.128.6 172.28.128.4]
+    2017/10/16 16:58:07 [INFO] agent: (LAN) joined: 0 Err: 2 error(s) occurred:
+
+* Failed to join 172.28.128.6: dial tcp 172.28.128.6:8301: getsockopt: connection refused
+* Failed to join 172.28.128.4: dial tcp 172.28.128.4:8301: getsockopt: no route to host
+    2017/10/16 16:58:07 [WARN] agent: Join LAN failed: <nil>, retrying in 30s
+    2017/10/16 16:58:07 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.4:8300 172.28.128.4:8300}: dial tcp 172.28.128.3:0->172.28.128.4:8300: getsockopt: no route to host
+    2017/10/16 16:58:09 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.5:8300 172.28.128.5:8300}: dial tcp 172.28.128.3:0->172.28.128.5:8300: getsockopt: no route to host
+    2017/10/16 16:58:14 [ERR] agent: failed to sync remote state: No cluster leader
+    2017/10/16 16:58:14 [WARN] raft: Election timeout reached, restarting election
+    2017/10/16 16:58:14 [INFO] raft: Node at 172.28.128.3:8300 [Candidate] entering Candidate state in term 95
+    2017/10/16 16:58:14 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.6:8300 172.28.128.6:8300}: dial tcp 172.28.128.3:0->172.28.128.6:8300: getsockopt: connection refused
+    2017/10/16 16:58:15 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.5:8300 172.28.128.5:8300}: dial tcp 172.28.128.3:0->172.28.128.5:8300: getsockopt: no route to host
+    2017/10/16 16:58:17 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.4:8300 172.28.128.4:8300}: dial tcp 172.28.128.3:0->172.28.128.4:8300: getsockopt: no route to host
+    2017/10/16 16:58:20 [ERR] agent: Coordinate update error: No cluster leader
+    2017/10/16 16:58:23 [WARN] raft: Election timeout reached, restarting election
+    2017/10/16 16:58:23 [INFO] raft: Node at 172.28.128.3:8300 [Candidate] entering Candidate state in term 96
+    2017/10/16 16:58:23 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.4:8300 172.28.128.4:8300}: dial tcp 172.28.128.3:0->172.28.128.4:8300: getsockopt: no route to host
+    2017/10/16 16:58:25 [INFO] serf: EventMemberJoin: web2-node 172.28.128.6
+    2017/10/16 16:58:25 [INFO] consul: Adding LAN server web2-node (Addr: tcp/172.28.128.6:8300) (DC: dc1)
+    2017/10/16 16:58:25 [INFO] serf: EventMemberJoin: web2-node.dc1 172.28.128.6
+    2017/10/16 16:58:25 [INFO] consul: Handled member-join event for server "web2-node.dc1" in area "wan"
+    2017/10/16 16:58:26 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.5:8300 172.28.128.5:8300}: dial tcp 172.28.128.3:0->172.28.128.5:8300: getsockopt: no route to host
+    2017/10/16 16:58:28 [WARN] raft: Election timeout reached, restarting election
+    2017/10/16 16:58:28 [INFO] raft: Node at 172.28.128.3:8300 [Candidate] entering Candidate state in term 97
+    2017/10/16 16:58:29 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.5:8300 172.28.128.5:8300}: dial tcp 172.28.128.3:0->172.28.128.5:8300: getsockopt: no route to host
+    2017/10/16 16:58:31 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.4:8300 172.28.128.4:8300}: dial tcp 172.28.128.3:0->172.28.128.4:8300: getsockopt: no route to host
+    2017/10/16 16:58:36 [WARN] raft: Election timeout reached, restarting election
+    2017/10/16 16:58:36 [INFO] raft: Node at 172.28.128.3:8300 [Candidate] entering Candidate state in term 98
+    2017/10/16 16:58:37 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.5:8300 172.28.128.5:8300}: dial tcp 172.28.128.3:0->172.28.128.5:8300: getsockopt: no route to host
+    2017/10/16 16:58:37 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.4:8300 172.28.128.4:8300}: dial tcp 172.28.128.3:0->172.28.128.4:8300: getsockopt: no route to host
+    2017/10/16 16:58:37 [INFO] agent: (LAN) joining: [172.28.128.6 172.28.128.4]
+    2017/10/16 16:58:39 [ERR] agent: failed to sync remote state: No cluster leader
+    2017/10/16 16:58:40 [INFO] agent: (LAN) joined: 1 Err: <nil>
+    2017/10/16 16:58:40 [INFO] agent: Join LAN completed. Synced with 1 initial agents
+    2017/10/16 16:58:42 [WARN] raft: Election timeout reached, restarting election
+    2017/10/16 16:58:42 [INFO] raft: Node at 172.28.128.3:8300 [Candidate] entering Candidate state in term 99
+    2017/10/16 16:58:43 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.5:8300 172.28.128.5:8300}: dial tcp 172.28.128.3:0->172.28.128.5:8300: getsockopt: no route to host
+    2017/10/16 16:58:43 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.4:8300 172.28.128.4:8300}: dial tcp 172.28.128.3:0->172.28.128.4:8300: getsockopt: no route to host
+2017/10/16 16:58:47 [DEBUG] raft-net: 172.28.128.3:8300 accepted connection from: 172.28.128.6:37611
+    2017/10/16 16:58:47 [INFO] raft: Node at 172.28.128.3:8300 [Follower] entering Follower state (Leader: "")
+    2017/10/16 16:58:48 [ERR] agent: Coordinate update error: No cluster leader
+    2017/10/16 16:58:54 [WARN] raft: Heartbeat timeout from "" reached, starting election
+    2017/10/16 16:58:54 [INFO] raft: Node at 172.28.128.3:8300 [Candidate] entering Candidate state in term 101
+    2017/10/16 16:58:54 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.5:8300 172.28.128.5:8300}: dial tcp 172.28.128.3:0->172.28.128.5:8300: getsockopt: connection refused
+    2017/10/16 16:58:57 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.4:8300 172.28.128.4:8300}: dial tcp 172.28.128.3:0->172.28.128.4:8300: getsockopt: no route to host
+    2017/10/16 16:58:59 [INFO] raft: Node at 172.28.128.3:8300 [Follower] entering Follower state (Leader: "")
+    2017/10/16 16:59:07 [WARN] raft: Heartbeat timeout from "" reached, starting election
+    2017/10/16 16:59:07 [INFO] raft: Node at 172.28.128.3:8300 [Candidate] entering Candidate state in term 103
+    2017/10/16 16:59:10 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.4:8300 172.28.128.4:8300}: dial tcp 172.28.128.3:0->172.28.128.4:8300: getsockopt: no route to host
+    2017/10/16 16:59:10 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.5:8300 172.28.128.5:8300}: dial tcp 172.28.128.3:0->172.28.128.5:8300: getsockopt: connection refused
+    2017/10/16 16:59:11 [ERR] agent: Coordinate update error: No cluster leader
+    2017/10/16 16:59:12 [INFO] serf: EventMemberJoin: db2-node.dc1 172.28.128.5
+    2017/10/16 16:59:12 [INFO] consul: Handled member-join event for server "db2-node.dc1" in area "wan"
+    2017/10/16 16:59:12 [INFO] serf: EventMemberJoin: db2-node 172.28.128.5
+    2017/10/16 16:59:12 [INFO] consul: Adding LAN server db2-node (Addr: tcp/172.28.128.5:8300) (DC: dc1)
+    2017/10/16 16:59:14 [ERR] agent: failed to sync remote state: No cluster leader
+    2017/10/16 16:59:15 [INFO] raft: Node at 172.28.128.3:8300 [Follower] entering Follower state (Leader: "")
+    2017/10/16 16:59:15 [INFO] consul: New leader elected: web2-node
+    2017/10/16 16:59:15 [INFO] agent: Synced node info
+2017/10/16 16:59:15 [DEBUG] raft-net: 172.28.128.3:8300 accepted connection from: 172.28.128.6:41981
+    2017/10/16 17:00:00 [INFO] serf: EventMemberJoin: db1-node 172.28.128.4
+    2017/10/16 17:00:00 [INFO] consul: Adding LAN server db1-node (Addr: tcp/172.28.128.4:8300) (DC: dc1)
+    2017/10/16 17:00:00 [INFO] serf: EventMemberJoin: db1-node.dc1 172.28.128.4
+    2017/10/16 17:00:00 [INFO] consul: Handled member-join event for server "db1-node.dc1" in area "wan"
+    2017/10/16 17:56:48 [INFO] serf: EventMemberLeave: db1-node.dc1 172.28.128.4
+    2017/10/16 17:56:48 [INFO] consul: Handled member-leave event for server "db1-node.dc1" in area "wan"
+    2017/10/16 17:56:49 [INFO] serf: EventMemberLeave: db1-node 172.28.128.4
+    2017/10/16 17:56:49 [INFO] consul: Removing LAN server db1-node (Addr: tcp/172.28.128.4:8300) (DC: dc1)
+    2017/10/16 17:57:08 [INFO] memberlist: Suspect db2-node has failed, no acks received
+    2017/10/16 17:57:11 [INFO] memberlist: Suspect web2-node has failed, no acks received
+    2017/10/16 17:57:15 [WARN] raft: Heartbeat timeout from "172.28.128.6:8300" reached, starting election
+    2017/10/16 17:57:15 [INFO] raft: Node at 172.28.128.3:8300 [Candidate] entering Candidate state in term 105
+    2017/10/16 17:57:21 [INFO] memberlist: Suspect db2-node has failed, no acks received
+    2017/10/16 17:57:22 [ERR] agent: Coordinate update error: No cluster leader
+    2017/10/16 17:57:24 [INFO] Caught signal:  terminated
+    2017/10/16 17:57:24 [INFO] Gracefully shutting down agent...
+    2017/10/16 17:57:24 [INFO] consul: server starting leave
+    2017/10/16 17:57:24 [INFO] Caught second signal terminated. Exiting
+    2017/10/16 17:57:24 [INFO] agent: Requesting shutdown
+    2017/10/16 17:57:24 [INFO] consul: shutting down server
+    2017/10/16 17:57:24 [WARN] serf: Shutdown without a Leave
+    2017/10/16 17:57:24 [WARN] serf: Shutdown without a Leave
+    2017/10/16 17:57:24 [INFO] manager: shutting down
+    2017/10/16 17:57:25 [ERR] raft: Failed to make RequestVote RPC to {Voter 172.28.128.5:8300 172.28.128.5:8300}: dial tcp 172.28.128.3:0->172.28.128.5:8300: i/o timeout
+    2017/10/16 17:57:25 [INFO] agent: consul server down
+    2017/10/16 17:57:25 [INFO] agent: shutdown complete
+    2017/10/16 17:57:25 [INFO] agent: Stopping DNS server 0.0.0.0:8600 (tcp)
+    2017/10/16 17:57:25 [INFO] agent: Stopping DNS server 0.0.0.0:8600 (udp)
+    2017/10/16 17:57:25 [INFO] agent: Stopping HTTP server [::]:8500
+    2017/10/16 17:57:25 [INFO] agent: Waiting for endpoints to shut down
+    2017/10/16 17:57:25 [INFO] agent: Endpoints down
+    2017/10/16 17:57:25 [INFO] Exit code:  1

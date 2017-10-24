@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Bookstore{% endblock %}
+
+{% block content %}
+  <div class="row container">
+    {% for b in books %}
+      <div class="col s12">
+        <a href="{{ url_for('show_book', book_id=b._id) }}"
+           style="color:#212121">
+          <div class="card horizontal hoverable">
+            <div class="card-image valign-wrapper">
+              {% if b.thumbnailUrl %}
+                <img src="{{ b.thumbnailUrl }}" alt="Cover image" height="150">
+              {% else %}
+                <img src="http://bit.ly/2wse8GD" alt="Cover image" height="150">
+              {% endif %}
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <span class="card-title">{{ b.title }}</span>
+                <p>{{ b.shortDescription }}</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="row center">
+    <ul class="pagination">
+      <li class="{% if paging.curr_page == 1 %}disabled{% else %}waves-effect{% endif %}">
+        <a href="{{ url_for('show_books', page=paging.curr_page-1) }}"><i class="material-icons">chevron_left</i></a>
+      </li>
+      {% set lr = paging.curr_page-paging.range %}
+      {% set rr = paging.curr_page+paging.range %}
+      {% set left = 1 if 1 > lr else lr %}
+      {% set right = paging.last_page if paging.last_page < rr else rr %}
+      {% for i in range(left, right+1) %}
+        <li class="{% if i == paging.curr_page %}active{% else %}waves-effect{% endif %}">
+          <a href="{{ url_for('show_books', page=i) }}">{{ i }}</a>
+        </li>
+      {% endfor %}
+      <li class="{% if paging.curr_page == paging.last_page %}disabled{% else %}waves-effect{% endif %}">
+        <a href="{{ url_for('show_books', page=paging.curr_page+1) }}"><i class="material-icons">chevron_right</i></a>
+      </li>
+    </ul>
+  </div>
+{% endblock %}

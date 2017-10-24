@@ -1,0 +1,12 @@
+{
+	"bootstrap": false,
+	"bind_addr": "172.28.128.4",
+	"data_dir": "/home/vagrant/db1",
+	"retry_join": [
+		"172.28.128.3",
+		"172.28.128.5"
+	],
+	"server": true,
+	"skip_leave_on_interrupt": false,
+	"leave_on_terminate": true
+}
