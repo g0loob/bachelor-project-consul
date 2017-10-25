@@ -22,4 +22,4 @@ fi
 cp /vagrant/bin/consul /usr/bin
 [ -d /etc/consul.d ] || sudo mkdir /etc/consul.d
 cp "/vagrant/consul.d/agents/$1.json" "/etc/consul.d/$1c.json"
-cp "/vagrant/consul.d/services/$1-svc.conf" "/etc/consul.d/$1s.json"
+cp "/vagrant/consul.d/services/$1-svc.json" "/etc/consul.d/$1s.json"
