@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
       s.args = ["web1"]
     end
     web1.trigger.before :destroy do
-      run_remote "sudo pkill -2 consul" # shutdown gracefully
+      run_remote "consul leave" # shutdown gracefully
     end
   end
 
@@ -41,7 +41,7 @@ Vagrant.configure("2") do |config|
       s.args = ["web2"]
     end
     web2.trigger.before :destroy do
-      run_remote "sudo pkill -2 consul" # shutdown gracefully
+      run_remote "consul leave" # shutdown gracefully
     end
   end
   
@@ -62,7 +62,7 @@ Vagrant.configure("2") do |config|
       s.args = ["db2"]
     end
     db2.trigger.before :destroy do
-      run_remote "sudo pkill -2 consul" # shutdown gracefully
+      run_remote "consul leave" # shutdown gracefully
     end
   end
 
@@ -84,7 +84,7 @@ Vagrant.configure("2") do |config|
     end
     db1.vm.provision "shell", path: "setup.d/db1-setup.sh"
     db1.trigger.before :destroy do
-      run_remote "sudo pkill -2 consul" # shutdown gracefully
+      run_remote "consul leave" # shutdown gracefully
     end
   end
 

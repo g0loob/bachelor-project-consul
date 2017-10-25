@@ -2,6 +2,7 @@
 .vagrant/
 
 ### My project ###
+output.d/
 *.output
 
 ### Python ###
